@@ -1,4 +1,18 @@
 # Calculator
+```ruby
+calculator = Calculator::Basic.new
+```
+#### Add
+```ruby
+# 5 + .7 + 256
+calculator.add(5, .7, 256)
+```
+
+#### Subtract
+```ruby
+# 15 - .7 - -256
+calculator.subtract(15, .7, -256)
+```
 
 TODO: Write a gem description
 

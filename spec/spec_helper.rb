@@ -1,1 +1,1 @@
-require 'calculator/basic'
+require 'calculator'

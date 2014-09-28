@@ -63,6 +63,20 @@ calculator.inverse(5)
 calculator.factorial(5)
 ```
 
+#### E
+```ruby
+# Finds Euler's number to N digits defaults 15 digits
+calculator.E     # 15 digits (default)
+calculator.E(30) # 30 digits
+```
+
+#### PI
+```ruby
+# Finds PI to N digits defaults 15 digits
+calculator.PI     # 15 digits (default)
+calculator.PI(30) # 30 digits
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:

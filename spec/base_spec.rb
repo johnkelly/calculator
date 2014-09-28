@@ -195,4 +195,24 @@ describe Calculator::Base do
       expect { subject.factorial('wat') }.to raise_error ArgumentError
     end
   end
+
+  describe '#E' do
+    it 'defaults to 15 digits if no argument' do
+      expect(subject.E).to eq BigDecimal.new('2.71828182845905')
+    end
+
+    it 'allows the number of digits to be customized' do
+      expect(subject.E(5)).to eq BigDecimal.new('2.7183')
+    end
+  end
+
+  describe '#PI' do
+    it 'defaults to 15 digits if no argument' do
+      expect(subject.PI).to eq BigDecimal.new('3.141592653589793')
+    end
+
+    it 'allows the number of digits to be customized' do
+      expect(subject.PI(2)).to eq BigDecimal.new('3.14')
+    end
+  end
 end

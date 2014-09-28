@@ -41,5 +41,13 @@ module Calculator
       fail ArgumentError unless Integer(number) >= 0
       number.to_i == 0 ? 1 : multiply(*(1..number))
     end
+
+    def E(decimal_places = 15)
+      BigMath::E(decimal_places).truncate(decimal_places)
+    end
+
+    def PI(decimal_places = 15)
+      BigMath::PI(decimal_places).truncate(decimal_places)
+    end
   end
 end

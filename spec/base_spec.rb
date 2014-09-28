@@ -25,7 +25,7 @@ describe Calculator::Base do
     end
 
     it 'throws an error if there are less than two arguments' do
-      expect{ subject.add(1) }.to raise_error ArgumentError
+      expect { subject.add(1) }.to raise_error ArgumentError
     end
   end
 
@@ -51,7 +51,7 @@ describe Calculator::Base do
     end
 
     it 'throws an error if there are less than two arguments' do
-      expect{ subject.subtract(1) }.to raise_error ArgumentError
+      expect { subject.subtract(1) }.to raise_error ArgumentError
     end
   end
 
@@ -77,7 +77,7 @@ describe Calculator::Base do
     end
 
     it 'throws an error if there are less than two arguments' do
-      expect{ subject.multiply(1) }.to raise_error ArgumentError
+      expect { subject.multiply(1) }.to raise_error ArgumentError
     end
   end
 
@@ -103,7 +103,7 @@ describe Calculator::Base do
     end
 
     it 'throws an error if there are less than two arguments' do
-      expect{ subject.divide(1) }.to raise_error ArgumentError
+      expect { subject.divide(1) }.to raise_error ArgumentError
     end
   end
 
@@ -123,8 +123,8 @@ describe Calculator::Base do
     end
 
     it 'powers negative decimals exponents by raising an error' do
-      expect{ subject.power(-4.5, -5.3333) }.to raise_error Math::DomainError
-      expect{ subject.power(-4.5, 5.3333) }.to raise_error Math::DomainError
+      expect { subject.power(-4.5, -5.3333) }.to raise_error Math::DomainError
+      expect { subject.power(-4.5, 5.3333) }.to raise_error Math::DomainError
       expect(subject.power(4.5, -5.3333)).to eq BigDecimal.new('0.000328262823190467')
     end
 
@@ -137,7 +137,7 @@ describe Calculator::Base do
     end
 
     it 'throws an error if there are less than two arguments' do
-      expect{ subject.power(1) }.to raise_error ArgumentError
+      expect { subject.power(1) }.to raise_error ArgumentError
     end
   end
 
@@ -152,7 +152,7 @@ describe Calculator::Base do
     end
 
     it 'raises an error when taking the root of a negative integer' do
-      expect{ subject.root(-4, 2) }.to raise_error Math::DomainError
+      expect { subject.root(-4, 2) }.to raise_error Math::DomainError
     end
 
     it 'roots a postive decimal with a decimal root' do
@@ -168,7 +168,7 @@ describe Calculator::Base do
     end
 
     it 'throws an error if there are less than two arguments' do
-      expect{ subject.root(1) }.to raise_error ArgumentError
+      expect { subject.root(1) }.to raise_error ArgumentError
     end
   end
 
@@ -176,7 +176,23 @@ describe Calculator::Base do
     it 'calls divide with 1 and the number' do
       allow(subject).to receive(:divide)
       subject.inverse(4)
-      expect(subject).to have_received(:divide).with(1,4)
+      expect(subject).to have_received(:divide).with(1, 4)
+    end
+  end
+
+  describe '#factorial' do
+    it 'returns the factorial for positive integers' do
+      expect(subject.factorial(5)).to eq(120)
+    end
+
+    it 'returns 1 for zero' do
+      expect(subject.factorial(0)).to eq(1)
+    end
+
+    it 'returns an error for non integers or negative numbers or gibbersh' do
+      expect { subject.factorial(1.4) }.to raise_error ArgumentError
+      expect { subject.factorial(-1) }.to raise_error ArgumentError
+      expect { subject.factorial('wat') }.to raise_error ArgumentError
     end
   end
 end

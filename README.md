@@ -56,6 +56,13 @@ calculator.root(15, 2, 3)
 calculator.inverse(5)
 ```
 
+#### Factorial
+```ruby
+# Finds the factorial for a given number
+# 5! => 5 * 4 * 3 * 2 * 1
+calculator.factorial(5)
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:

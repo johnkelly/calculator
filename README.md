@@ -2,7 +2,7 @@
 
 ## Usage
 ```ruby
-calculator = Calculator::Basic.new
+calculator = Calculator::Base.new
 ```
 #### Add
 ```ruby

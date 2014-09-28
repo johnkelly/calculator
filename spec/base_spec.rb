@@ -238,6 +238,20 @@ describe Calculator::Base do
     end
   end
 
+  describe '#absolute_value' do
+    it 'returns the number if positive' do
+      expect(subject.absolute_value(5.656)).to eq BigDecimal.new('5.656')
+    end
+
+    it 'returns 0 if the number is 0' do
+      expect(subject.absolute_value(0)).to eq BigDecimal.new('0')
+    end
+
+    it 'returns a positive version of the number if negative' do
+      expect(subject.absolute_value(-5.656)).to eq BigDecimal.new('5.656')
+    end
+  end
+
   describe '#E' do
     it 'defaults to 15 digits if no argument' do
       expect(subject.E).to eq BigDecimal.new('2.71828182845905')

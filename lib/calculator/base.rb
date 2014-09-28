@@ -54,6 +54,11 @@ module Calculator
       divide(ln(BigDecimal.new(number.to_s), decimal_places), ln(BigDecimal.new(base.to_s), decimal_places))
     end
 
+    def absolute_value(number)
+      value = BigDecimal.new(number.to_s)
+      value.sign > BigDecimal.new(0) ? value : (BigDecimal.new(-1) * value)
+    end
+
     def E(decimal_places = DEFAULT_SIGNIFICANT_FIGURES)
       BigMath::E(decimal_places).truncate(decimal_places)
     end

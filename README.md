@@ -63,6 +63,26 @@ calculator.inverse(5)
 calculator.factorial(5)
 ```
 
+#### Natural Log (ln)
+```ruby
+# Finds the natural log defaults 15 digits
+calculator.ln(5)     # 15 digits (default)
+calculator.ln(5, 30) # 30 digits
+```
+
+#### Log
+```ruby
+# Finds the log defaults to base 10 and 15 digits
+calculator.log(5)        # base 10 & 15 digits (default)
+calculator.log(5, 3, 30) # base 3  & 30 digits
+```
+
+#### Absolute Value
+```ruby
+# Finds the absolute value
+calculator.absolute_value(-5.34)
+```
+
 #### E
 ```ruby
 # Finds Euler's number to N digits defaults 15 digits
@@ -75,20 +95,6 @@ calculator.E(30) # 30 digits
 # Finds PI to N digits defaults 15 digits
 calculator.PI     # 15 digits (default)
 calculator.PI(30) # 30 digits
-```
-
-#### ln
-```ruby
-# Finds the natural log defaults 15 digits
-calculator.ln(5)     # 15 digits (default)
-calculator.ln(5, 30) # 30 digits
-```
-
-#### log
-```ruby
-# Finds the log defaults to base 10 and 15 digits
-calculator.log(5)        # base 10 & 15 digits (default)
-calculator.log(5, 3, 30) # base 3  & 30 digits
 ```
 
 ## Installation

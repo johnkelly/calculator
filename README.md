@@ -32,6 +32,30 @@ calculator.multiply(15, .7, 1256, -23.234)
 calculator.divide(15, .7, 1256, -23.234)
 ```
 
+#### Power
+```ruby
+# Multiplies a number by itself n times
+# 15 ** 2
+calculator.power(15, 2)
+
+# (3 ** 2) ** 2
+calculator.power(3, 2, 2)
+```
+
+#### Root
+```ruby
+# Finds the x root of a number n times
+# (15 ** (1/2)) ** (1/3)
+calculator.root(15, 2, 3)
+```
+
+#### Inverse
+```ruby
+# Finds the inverse for a given number
+# Inverse of 5 => 0.2
+calculator.inverse(5)
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:

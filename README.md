@@ -77,6 +77,20 @@ calculator.PI     # 15 digits (default)
 calculator.PI(30) # 30 digits
 ```
 
+#### ln
+```ruby
+# Finds the natural log defaults 15 digits
+calculator.ln(5)     # 15 digits (default)
+calculator.ln(5, 30) # 30 digits
+```
+
+#### log
+```ruby
+# Finds the log defaults to base 10 and 15 digits
+calculator.log(5)        # base 10 & 15 digits (default)
+calculator.log(5, 3, 30) # base 3  & 30 digits
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:

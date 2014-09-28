@@ -196,6 +196,48 @@ describe Calculator::Base do
     end
   end
 
+  describe '#ln' do
+    it 'returns the natural log for positive integers' do
+      expect(subject.ln(5)).to eq BigDecimal.new('1.6094379124341')
+    end
+
+    it 'returns the natural log for positive decimals' do
+      expect(subject.ln(0.5)).to eq BigDecimal.new('-0.693147180559945')
+    end
+
+    it 'returns the natural log for positive decimals and limited sig figs' do
+      expect(subject.ln(0.5, 2)).to eq BigDecimal.new('-0.69')
+    end
+
+    it 'returns an error for negative numbers or gibbersh' do
+      expect { subject.ln(-1) }.to raise_error ArgumentError
+      expect { subject.ln('wat') }.to raise_error ArgumentError
+    end
+  end
+
+  describe '#log' do
+    it 'returns the base ten log for positive integers by default' do
+      expect(subject.log(5)).to eq BigDecimal.new('0.698970004336018849738909949700692868')
+    end
+
+    it 'returns other base logs for positive integers' do
+      expect(subject.log(5, 2)).to eq BigDecimal.new('2.321928094887362843932071703')
+    end
+
+    it 'returns the log for positive decimals' do
+      expect(subject.log(0.5)).to eq BigDecimal.new('-0.30102999566398115026109005029930713238120159')
+    end
+
+    it 'returns the natural log for positive decimals and limited sig figs' do
+      expect(subject.log(0.5, 10, 2)).to eq BigDecimal.new('-0.30')
+    end
+
+    it 'returns an error for negative numbers or gibbersh' do
+      expect { subject.log(-1) }.to raise_error ArgumentError
+      expect { subject.log('wat') }.to raise_error ArgumentError
+    end
+  end
+
   describe '#E' do
     it 'defaults to 15 digits if no argument' do
       expect(subject.E).to eq BigDecimal.new('2.71828182845905')

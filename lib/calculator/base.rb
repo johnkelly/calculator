@@ -38,8 +38,18 @@ module Calculator
     end
 
     def factorial(number)
-      fail ArgumentError unless Integer(number) >= 0
+      fail ArgumentError unless Integer(number) >= BigDecimal.new(0)
       number.to_i == 0 ? 1 : multiply(*(1..number))
+    end
+
+    def ln(number, decimal_places = 15)
+      fail ArgumentError unless BigDecimal.new(number.to_s) > BigDecimal.new(0)
+      BigMath::log(BigDecimal.new(number.to_s), decimal_places).truncate(decimal_places)
+    end
+
+    def log(number, base = 10, decimal_places = 15)
+      fail ArgumentError unless BigDecimal.new(number.to_s) > BigDecimal.new(0)
+      divide(ln(BigDecimal.new(number.to_s), decimal_places), ln(BigDecimal.new(base.to_s), decimal_places))
     end
 
     def E(decimal_places = 15)

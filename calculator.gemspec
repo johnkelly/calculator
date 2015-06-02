@@ -6,9 +6,9 @@ require 'calculator/version'
 Gem::Specification.new do |spec|
   spec.name          = 'calculator'
   spec.version       = Calculator::VERSION
-  spec.authors       = ['John Kelly', 'Gabe Redig']
-  spec.email         = ['john@johnkellycode.com', 'glredig@gmail.com']
-  spec.summary       = 'A calculator to be used for word problem solving.'
+  spec.authors       = ['John Kelly']
+  spec.email         = ['john@johnkellycode.com']
+  spec.summary       = 'A calculator to be used for problem solving.'
   spec.description   = 'Being used to solve Math problems since 2014.'
   spec.homepage      = ''
   spec.license       = 'MIT'

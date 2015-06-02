@@ -102,7 +102,7 @@ calculator.PI(30) # 30 digits
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'calculator', git: 'https://github.com/limitingfactor/calculator.git'
+gem 'calculator', git: 'https://github.com/johnkelly/calculator.git'
 ```
 
 And then execute:
